@@ -13,9 +13,11 @@ body{
     justify-content: space-between;
     
     height: 10vh;
-    width: 600px;
+    width: 500px;
 }
-
+.nav-left{
+    font-size: 20px;
+}
 .nav-right{
     display: flex;
     flex-direction: row;
@@ -25,35 +27,94 @@ body{
 
 .nav-right .title{
     text-transform: uppercase;
+    font-size: 12px;
 }
 
 .nav-right .numbers{
     display: flex;
-    gap: 7px;
+    gap: 20px;
+    font-size: 12px;
+    margin-left: 5px;
 }
 
 .toggle{
     width: 70px;
-    height: 20px;
+    height: 15px;
     background-color: hsl(223, 31%, 20%);
     border-radius: 10px;
+    
+}
+
+.bullet{
+    background-color: hsl(6, 63%, 50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: relative;
+    top: -12.5px;
+    right: -3px;
 }
 
 main{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 600px;
+    width: 500px;
 }
 .screen{
-    height: 15vh;
+    height: 12vh;
     background-color: hsl(224, 36%, 15%);
     border-radius: 5px;
 }
 
-
 .calc-container{
     border-radius: 5px;
+    padding: 10px 0 10px 0;
     height: 65vh;
     background-color: hsl(223, 31%, 20%);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.calc-container .number{
+    background-color: hsl(30, 25%, 89%);
+    border-radius: 5px;
+    box-shadow: hsl(224, 28%, 35%);
+    margin: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.del{
+    background-color: hsl(225, 21%, 49%);
+    border-radius: 5px;
+    box-shadow: hsl(224, 28%, 35%);
+    margin: 10px 15px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reset{
+    background-color: hsl(225, 21%, 49%);
+    border-radius: 5px;
+    box-shadow: hsl(224, 28%, 35%);
+    margin: 10px 15px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.equals{
+    background-color: hsl(6, 63%, 50%);
+    border-radius: 5px;
+    box-shadow: hsl(6, 70%, 34%);
+    margin: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
