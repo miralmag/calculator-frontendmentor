@@ -9,13 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/main.css">
   <title>Frontend Mentor | Calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; color: hsl(0, 0%, 100%);}
-    .attribution a { color: hsl(0, 0%, 100%); }
-  </style>
 </head>
+
 <body>
 <header class="header">
   <nav class="nav-left">
@@ -29,7 +24,11 @@
         <p class="2">2</p>
         <p class="3">3</p>
       </div>
-      <div class="toggle"></div>
+      <div class="tri-toggle">
+        <input class="toggle-button" type="radio" name="toggle" id="one" />
+        <input class="toggle-button" type="radio" name="toggle" id="two" />
+        <input class="toggle-button" type="radio" name="toggle" id="three" />
+      </div>
       <div class="bullet"></div>
     </div>
   </nav>
@@ -59,9 +58,12 @@
   <div class="equals"><p class="equals-content">=</p></div>
 </div>
 </main>
-  <div class="attribution">
+  
+<div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://github.com/miralmag">Míriam Almagro</a>.
   </div>
+
+  <script src="./main.js"></script>
 </body>
 </html>

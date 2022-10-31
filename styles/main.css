@@ -1,3 +1,9 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
 :root{
     --main-bg-blue: hsl(222, 26%, 31%);
     --keypad-blue: hsl(223, 31%, 20%);
@@ -49,9 +55,14 @@ body{
     width: 500px;
 }
 
+.header h1{
+    margin-top: 35px;
+}
+
 .nav-left{
     font-size: 20px;
 }
+
 .nav-right{
     display: flex;
     flex-direction: row;
@@ -68,28 +79,39 @@ body{
     display: flex;
     justify-content: space-between;
     position: relative;
-    top: 12px;
+    top: -5px;
     font-size: 12px;
-    margin: 0 7px 0 7px;
+    margin: 0 7px 0 5px;
 }
 
-.toggle{
+.tri-toggle{
     width: 55px;
-    height: 20px;
+    height: 17px;
     background-color: var(--keypad-blue);
     border-radius: 10px;
     position: relative;
-    top: 5px;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
 }
 
-.bullet{
-    background-color: var(--red);
-    width: 12px;
-    height: 12px;
+.tri-toggle input{
+    width: 13px;
+    height: 13px;
     border-radius: 50%;
-    position: relative;
-    top: -11px;
-    right: -4px;
+    appearance: none;
+    background-color: var(--red);
+    opacity: 0;
+    position:relative;
+    top: 2px;
+}
+
+.tri-toggle input:hover{
+    cursor: pointer;
+}
+
+#one{
+    opacity: 1;
 }
 
 main{
@@ -165,6 +187,20 @@ main{
     color: var(--white);
 }
 
+.attribution{
+    font-size: 11px; 
+    text-align: center;
+    color: var(--white);
+    margin-top: 20px;
+}
+.attribution a{
+    color: var(--white);
+}
+
+.attribution a:hover{
+    color: var(--red);
+}
+
 
 /* Theme 2 styles */
 
@@ -176,7 +212,7 @@ body .theme2{
     color: var(--t2-text);
 }
 
-.toggle .theme2{
+.tri-toggle .theme2{
     background-color: var(--grey);
 }
 
@@ -227,7 +263,7 @@ body .theme3{
     color: var(--yellow);
 }
 
-.toggle .theme3{
+.tri-toggle .theme3{
     background-color: var(--dark-violet);
 }
 
