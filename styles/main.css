@@ -128,6 +128,16 @@ main{
     height: 12vh;
     background-color: var(--dark-blue);
     border-radius: 5px;
+    color: var(--white);
+    font-size: 30px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.screen-result{
+    margin-right: 10px;
 }
 
 .keypad{
