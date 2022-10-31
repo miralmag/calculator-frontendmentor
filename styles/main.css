@@ -1,5 +1,39 @@
+:root{
+    --main-bg-blue: hsl(222, 26%, 31%);
+    --keypad-blue: hsl(223, 31%, 20%);
+    --dark-blue: hsl(224, 36%, 15%);
+    --key-grey-blue: hsl(225, 21%, 49%);
+    --key-grey-blue-shadow: hsl(224, 28%, 35%);
+    --red: hsl(6, 63%, 50%);
+    --red-shadow: hsl(6, 70%, 34%);
+    --t1-number-key:  hsl(30, 25%, 89%);
+    --t1-number-key-shadow: hsl(28, 16%, 65%);
+    --white: hsl(0, 0%, 100%);
+    --t1-text: hsl(221, 14%, 31%);
+    --light-grey: hsl(0, 0%, 90%);
+    --grey: hsl(0, 5%, 81%);
+    --very-light-grey: hsl(0, 0%, 93%);
+    --cyan: hsl(185, 42%, 37%);
+    --cyan-shadow: hsl(185, 58%, 25%);
+    --orange: hsl(25, 98%, 40%);
+    --orange-shadow: hsl(25, 99%, 27%);
+    --t2-key-number: hsl(45, 7%, 89%);
+    --t2-key-number-shadow: hsl(35, 11%, 61%);
+    --t2-text: hsl(60, 10%, 19%);
+    --very-dark-violet: hsl(268, 75%, 9%);
+    --dark-violet: hsl(268, 71%, 12%);
+    --magenta: hsl(281, 89%, 26%);
+    --magenta-shadow: hsl(285, 91%, 52%);
+    --light-blue: hsl(176, 100%, 44%);
+    --light-blue-shadow: hsl(177, 92%, 70%);
+    --violet: hsl(268, 47%, 21%);
+    --violet-shadow: hsl(290, 70%, 36%);
+    --t3-text: hsl(198, 20%, 13%);
+    --yellow: hsl(52, 100%, 62%);
+}
+
 body{
-    background-color: hsl(222, 26%, 31%);
+    background-color: var(--main-bg-blue);
     font-family: 'League Spartan', sans-serif;
     display: flex;
     flex-direction: column;
@@ -7,17 +41,9 @@ body{
     gap: 10px;
 }
 
-body .theme2{
-    background-color: hsl(0, 0%, 90%);
-}
-
-body .theme3{
-    background-color: hsl(268, 75%, 9%);
-}
-
 .header{
     display: flex;
-    color: hsl(0, 0%, 100%);
+    color: var(--white);
     justify-content: space-between;
     height: 10vh;
     width: 500px;
@@ -50,14 +76,14 @@ body .theme3{
 .toggle{
     width: 55px;
     height: 20px;
-    background-color: hsl(223, 31%, 20%);
+    background-color: var(--keypad-blue);
     border-radius: 10px;
     position: relative;
     top: 5px;
 }
 
 .bullet{
-    background-color: hsl(6, 63%, 50%);
+    background-color: var(--red);
     width: 12px;
     height: 12px;
     border-radius: 50%;
@@ -74,67 +100,172 @@ main{
 }
 .screen{
     height: 12vh;
-    background-color: hsl(224, 36%, 15%);
+    background-color: var(--dark-blue);
     border-radius: 5px;
 }
 
 .calc-container{
     border-radius: 5px;
     padding: 10px 0 10px 0;
-    height: 65vh;
-    background-color: hsl(223, 31%, 20%);
+    height: 60vh;
+    background-color: var(--keypad-blue);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
 
 .calc-container .number{
-    background-color: hsl(30, 25%, 89%);
+    background-color: var(--t1-number-key);
     border-radius: 5px;
-    box-shadow:  0px 3px 1px 0px hsl(28, 16%, 65%);
-    margin: 10px 15px;
+    box-shadow:  0px 3px 1px 0px var(--t1-number-key-shadow);
+    margin: 8px 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: hsl(221, 14%, 31%);
+    color: var(--t1-text);
     font-size: 20px;
 }
 
 .del{
-    background-color: hsl(225, 21%, 49%);
+    background-color: var(--key-grey-blue);
     border-radius: 5px;
-    box-shadow: 0px 3px 1px 0px hsl(224, 28%, 35%);
-    margin: 10px 15px;
+    box-shadow: 0px 3px 1px 0px var(--key-grey-blue-shadow);
+    margin: 8px 15px;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: hsl(0, 0%, 100%);
+    color: var(--white);
 }
 
 .reset{
-    background-color: hsl(225, 21%, 49%);
+    background-color: var(--key-grey-blue);
     border-radius: 5px;
     grid-column-start: 1;
     grid-column-end: 3;
-    box-shadow: 0px 3px 1px 0px hsl(224, 28%, 35%);
+    box-shadow: 0px 3px 1px 0px var(--key-grey-blue-shadow);
     margin: 15px 15px;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: hsl(0, 0%, 100%);
+    color: var(--white);
 }
 
 .equals{
-    background-color: hsl(6, 63%, 50%);
+    background-color: var(--red);
     border-radius: 5px;
     grid-column-start: 3;
     grid-column-end: 5;
-    box-shadow: 0px 3px 1px 0px hsl(6, 70%, 34%);
+    box-shadow: 0px 3px 1px 0px var(--red-shadow);
     margin: 15px 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: hsl(0, 0%, 100%);
+    color: var(--white);
 }
+
+
+/* Theme 2 styles */
+
+body .theme2{
+    background-color: var(--light-grey);
+}
+
+.header .theme2{
+    color: var(--t2-text);
+}
+
+.toggle .theme2{
+    background-color: var(--grey);
+}
+
+.bullet .theme2{
+    background-color: var(--orange);
+}
+
+.screen .theme2{
+    background-color: var(--very-light-grey);
+}
+
+.calc-container .theme2{
+    background-color: var(--grey);
+}
+
+.calc-container .number .theme2{
+    background-color: var(--t2-key-number);
+    box-shadow:  0px 3px 1px 0px var(--t2-key-number-shadow);
+    color: var(--t2-text);
+}
+
+.del .theme2{
+    background-color:var(--cyan);
+    box-shadow:  0px 3px 1px 0px var(--cyan-shadow);
+    color: var(--white);
+}
+
+.reset .theme2{
+    background-color:var(--cyan);
+    box-shadow:  0px 3px 1px 0px var(--cyan-shadow);
+    color: var(--white);
+}
+
+.equals .theme2{
+    background-color: var(--orange);
+    box-shadow:  0px 3px 1px 0px var(--orange-shadow);
+    color: var(--white);
+}
+
+
+/* Theme 3 styles */
+
+body .theme3{
+    background-color: var(--very-dark-violet);
+}
+
+.header .theme3{
+    color: var(--yellow);
+}
+
+.toggle .theme3{
+    background-color: var(--dark-violet);
+}
+
+.bullet .theme3{
+    background-color: var(--light-blue);
+}
+
+.screen .theme3{
+    background-color: var(--dark-violet);
+}
+
+.calc-container .theme3{
+    background-color: var(--dark-violet);
+}
+
+.calc-container .number .theme3{
+    background-color: var(--violet);
+    box-shadow:  0px 3px 1px 0px var(--violet-shadow);
+    color: var(--yellow);
+}
+
+.del .theme2{
+    background-color: var(--magenta);
+    box-shadow:  0px 3px 1px 0px var(--magenta-shadow);
+    color: var(--white);
+}
+
+.reset .theme2{
+    background-color: var(--magenta);
+    box-shadow:  0px 3px 1px 0px var(--magenta-shadow);
+    color: var(--white);
+}
+
+.equals .theme2{
+    background-color: var(--light-blue);
+    box-shadow:  0px 3px 1px 0px var(--light-blue-shadow);
+    color: var(--t3-text);
+}
+
+
+
