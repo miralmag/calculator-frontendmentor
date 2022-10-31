@@ -38,7 +38,11 @@
     --yellow: hsl(52, 100%, 62%);
 }
 
-body{
+button{
+    border: none;
+}
+
+.body{
     background-color: var(--main-bg-blue);
     font-family: 'League Spartan', sans-serif;
     display: flex;
@@ -95,7 +99,7 @@ body{
     justify-content: space-around;
 }
 
-.tri-toggle input{
+.toggle-button{
     width: 13px;
     height: 13px;
     border-radius: 50%;
@@ -106,7 +110,7 @@ body{
     top: 2px;
 }
 
-.tri-toggle input:hover{
+.toggle-button:hover{
     cursor: pointer;
 }
 
@@ -126,7 +130,7 @@ main{
     border-radius: 5px;
 }
 
-.calc-container{
+.keypad{
     border-radius: 5px;
     padding: 10px 0 10px 0;
     height: 60vh;
@@ -136,7 +140,7 @@ main{
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
 
-.calc-container .number{
+.keypad .number{
     background-color: var(--t1-number-key);
     border-radius: 5px;
     box-shadow:  0px 3px 1px 0px var(--t1-number-key-shadow);
@@ -146,6 +150,10 @@ main{
     align-items: center;
     color: var(--t1-text);
     font-size: 20px;
+}
+
+.keypad .number:hover{
+    cursor: pointer;
 }
 
 .del{
@@ -158,6 +166,10 @@ main{
     justify-content: center;
     align-items: center;
     color: var(--white);
+}
+
+.del:hover{
+    cursor: pointer;
 }
 
 .reset{
@@ -174,6 +186,10 @@ main{
     color: var(--white);
 }
 
+.reset:hover{
+    cursor: pointer;
+}
+
 .equals{
     background-color: var(--red);
     border-radius: 5px;
@@ -185,6 +201,10 @@ main{
     justify-content: center;
     align-items: center;
     color: var(--white);
+}
+
+.equals:hover{
+    cursor: pointer;
 }
 
 .attribution{
@@ -204,7 +224,7 @@ main{
 
 /* Theme 2 styles */
 
-body .theme2{
+.body .theme2{
     background-color: var(--light-grey);
 }
 
@@ -216,7 +236,7 @@ body .theme2{
     background-color: var(--grey);
 }
 
-.bullet .theme2{
+.toggle-button .theme2{
     background-color: var(--orange);
 }
 
@@ -224,11 +244,11 @@ body .theme2{
     background-color: var(--very-light-grey);
 }
 
-.calc-container .theme2{
+.keypad .theme2{
     background-color: var(--grey);
 }
 
-.calc-container .number .theme2{
+.keypad .number .theme2{
     background-color: var(--t2-key-number);
     box-shadow:  0px 3px 1px 0px var(--t2-key-number-shadow);
     color: var(--t2-text);
@@ -255,7 +275,7 @@ body .theme2{
 
 /* Theme 3 styles */
 
-body .theme3{
+.body .theme3{
     background-color: var(--very-dark-violet);
 }
 
@@ -275,11 +295,11 @@ body .theme3{
     background-color: var(--dark-violet);
 }
 
-.calc-container .theme3{
+.keypad .theme3{
     background-color: var(--dark-violet);
 }
 
-.calc-container .number .theme3{
+.keypad .number .theme3{
     background-color: var(--violet);
     box-shadow:  0px 3px 1px 0px var(--violet-shadow);
     color: var(--yellow);

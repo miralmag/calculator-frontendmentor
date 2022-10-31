@@ -1,7 +1,9 @@
 'use strict';
 
-var toggleButtons = document.getElementsByClassName("toggle-button");
-var toggleArr = [...toggleButtons];
+//toggle movement
+
+const toggleButtons = document.getElementsByClassName("toggle-button");
+const toggleArr = [...toggleButtons];
 
 toggleArr.forEach((element, index) => {
     element.addEventListener("click", () => {
@@ -15,3 +17,4 @@ toggleArr.forEach((element, index) => {
       });
   });
 });
+
