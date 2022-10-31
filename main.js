@@ -5,13 +5,39 @@ const operationButtons = document.querySelectorAll('[data-operation]');
 const deleteButton = document.querySelector('[data-delete]');
 const resetButton = document.querySelector('[data-reset]');
 const equalsButton = document.querySelector('[data-equals]');
-const screenResult = document.querySelector('.screen-down-value');
-const screenUpValue = document.querySelector('.screen-up-value');
+const screenDownResult = document.querySelector('.screen-down-value');
+const screenUpResult = document.querySelector('.screen-up-value');
 
 
-resetButton.addEventListener( 'click', () => {
-    screenResult.innerHTML = "";
-})
+class Calculator {
+    constructor(screenDownResult, screenUpResult){
+        this.screenUpResult = screenUpResult;
+        this.screenDownResult = screenDownResult;
+        this.previousValue = '';
+        this.currentValue = '';
+        this.operator = undefined;
+    }
+
+    addNumber(number){
+        this.previousValue = this.previousValue + number;
+    }
+
+    display() {
+        this.screenDownResult.innerText = this.previousValue;
+    }
+
+    delete() {
+        this.previousValue = this.previousValue.slice(0,-1)
+    }
+
+    reset() {
+        this.previousValue = '';
+    }
+}
+
+const calculator = new Calculator (screenDownResult, screenUpResult);
+
+
 
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -20,26 +46,15 @@ numberButtons.forEach(button => {
     })
 })
 
-class Calculator {
-    constructor(screenResult, screenUpValue){
-        this.screenResult = screenResult;
-        this.screenUpValue = screenUpValue;
-        this.lowerValue = '';
-        this.upperValue = '';
-        this.operator = undefined;
-    }
+resetButton.addEventListener('click', () => {
+    calculator.reset();
+    calculator.display();
+})
 
-    addNumber(number){
-        this.lowerValue = number;
-    }
-
-    display() {
-        this.screenResult.innerText = this.lowerValue;
-    }
-}
-
-const calculator = new Calculator (screenResult, screenUpValue);
-
+deleteButton.addEventListener('click', () =>{
+    calculator.delete();
+    calculator.display();
+})
 
 //toggle movement
 
