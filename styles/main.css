@@ -129,15 +129,21 @@ main{
     background-color: var(--dark-blue);
     border-radius: 5px;
     color: var(--white);
-    font-size: 30px;
     text-align: right;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 15px;
 }
 
-.screen-result{
-    margin-right: 10px;
+.screen-up-value{
+    margin: 15px 10px 0 0;
+    font-size: 20px;
+}
+
+.screen-down-value{
+    margin: 0 10px 10px 0;
+    font-size: 30px;
 }
 
 .keypad{

@@ -1,44 +1,13 @@
 'use strict';
 
-// class Calculator {
-//     sum(num1, num2){
-//         return num1 + num2; 
-//     }
-
-//     subtract(num1, num2){
-//         return num1 - num2; 
-//     }
-
-//     multiply(num1, num2){
-//         return num1 * num2; 
-//     }
-
-//     divide (num1, num2){
-//         return num1 / num2; 
-//     }
-// }
-
-// class Screen{
-//     constructor(screenValue){
-//         this.screenValue = screenValue;
-//         this.calculator = new Calculator();
-//         this.currentValue = '';
-//         this.previousValue = '';
-//     }
-//     addNumber(number){
-//         this.currentValue = number;
-//     }
-// }
-
-
 const numberButtons = document.querySelectorAll('[data-number]');
 const operationButtons = document.querySelectorAll('[data-operation]');
 const deleteButton = document.querySelector('[data-delete]');
 const resetButton = document.querySelector('[data-reset]');
 const equalsButton = document.querySelector('[data-equals]');
-const screenResult = document.querySelector('.screen-result');
+const screenResult = document.querySelector('.screen-down-value');
+const screenUpValue = document.querySelector('.screen-up-value');
 
-// const screen = new Screen(result);
 
 resetButton.addEventListener( 'click', () => {
     screenResult.innerHTML = "";
@@ -46,15 +15,30 @@ resetButton.addEventListener( 'click', () => {
 
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
-        screenResult.innerHTML += button.id;
+        calculator.addNumber(button.id);
+        calculator.display();
     })
 })
 
-operationButtons.forEach(button => {
-    button.addEventListener('click', () =>{
-        screenResult.innerHTML += button.id;
-    } )
-})
+class Calculator {
+    constructor(screenResult, screenUpValue){
+        this.screenResult = screenResult;
+        this.screenUpValue = screenUpValue;
+        this.lowerValue = '';
+        this.upperValue = '';
+        this.operator = undefined;
+    }
+
+    addNumber(number){
+        this.lowerValue = number;
+    }
+
+    display() {
+        this.screenResult.innerText = this.lowerValue;
+    }
+}
+
+const calculator = new Calculator (screenResult, screenUpValue);
 
 
 //toggle movement
