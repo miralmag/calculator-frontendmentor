@@ -24,6 +24,7 @@ class Calculator {
 
     display() {
         this.screenDownResult.innerText = this.previousValue;
+        this.screenUpResult.innerText = this.currentValue;
     }
 
     delete() {
@@ -33,11 +34,42 @@ class Calculator {
     reset() {
         this.previousValue = '';
     }
+
+    chooseOperator(operator) {
+        if (this.previousValue === '') return;
+        if (this.currentValue !== '') {
+            this.calculate();
+        }
+
+        this.operator = operator;
+        this.currentValue = this.previousValue;
+        this.previousValue = '';
+    }
+
+    calculate() {
+        let result;
+        let parsedCurrentValue = parseFloat(this.currentValue);
+        let parsedPreviousValue = parseFloat(this.previousValue);
+
+        switch(this.operator) {
+            case '+' :
+                result = parsedCurrentValue + parsedPreviousValue;
+            break;
+            case '-':
+                result = parsedPreviousValue - parsedCurrentValue;
+            break;
+            case '/':
+                result = parsedPreviousValue / parsedCurrentValue;
+            break;
+            case 'x':
+                result = parsedPreviousValue * parsedCurrentValue;
+            break;
+        }
+    }
+
 }
 
 const calculator = new Calculator (screenDownResult, screenUpResult);
-
-
 
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -54,6 +86,17 @@ resetButton.addEventListener('click', () => {
 deleteButton.addEventListener('click', () =>{
     calculator.delete();
     calculator.display();
+})
+
+operationButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.chooseOperator(button.id);
+        calculator.display();
+    })
+})
+
+equalsButton.addEventListener('click', () => {;
+    
 })
 
 //toggle movement
