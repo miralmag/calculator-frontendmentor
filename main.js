@@ -33,6 +33,7 @@ class Calculator {
 
     reset() {
         this.previousValue = '';
+        this.currentValue = '';
     }
 
     chooseOperator(operator) {
@@ -56,15 +57,20 @@ class Calculator {
                 result = parsedCurrentValue + parsedPreviousValue;
             break;
             case '-':
-                result = parsedPreviousValue - parsedCurrentValue;
+                result = parsedCurrentValue - parsedPreviousValue;
             break;
             case '/':
-                result = parsedPreviousValue / parsedCurrentValue;
+                result = parsedCurrentValue /parsedPreviousValue;
             break;
             case 'x':
-                result = parsedPreviousValue * parsedCurrentValue;
+                result = parsedCurrentValue * parsedPreviousValue;
             break;
+            default: return;
         }
+
+        this.previousValue = result;
+        this.operator = undefined;
+        this.currentValue = '';
     }
 
 }
@@ -96,7 +102,8 @@ operationButtons.forEach(button => {
 })
 
 equalsButton.addEventListener('click', () => {;
-    
+    calculator.calculate();
+    calculator.display();
 })
 
 //toggle movement
