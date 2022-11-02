@@ -19,6 +19,7 @@ class Calculator {
     }
 
     addNumber(number){
+        if (number === '.' && this.previousValue.includes('.')) return;
         this.previousValue = this.previousValue + number;
     }
 
@@ -34,6 +35,7 @@ class Calculator {
     reset() {
         this.previousValue = '';
         this.currentValue = '';
+        this.operator = undefined;
     }
 
     chooseOperator(operator) {
