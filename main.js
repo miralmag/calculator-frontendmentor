@@ -53,7 +53,7 @@ class Calculator {
         let result;
         let parsedCurrentValue = parseFloat(this.currentValue);
         let parsedPreviousValue = parseFloat(this.previousValue);
-
+        if (isNaN(parsedCurrentValue) || isNaN(parsedPreviousValue)) return;
         switch(this.operator) {
             case '+' :
                 result = parsedCurrentValue + parsedPreviousValue;
