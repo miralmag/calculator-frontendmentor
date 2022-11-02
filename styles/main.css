@@ -5,37 +5,22 @@
   }
 
 :root{
-    --main-bg-blue: hsl(222, 26%, 31%);
-    --keypad-blue: hsl(223, 31%, 20%);
-    --dark-blue: hsl(224, 36%, 15%);
-    --key-grey-blue: hsl(225, 21%, 49%);
-    --key-grey-blue-shadow: hsl(224, 28%, 35%);
-    --red: hsl(6, 63%, 50%);
-    --red-shadow: hsl(6, 70%, 34%);
-    --t1-number-key:  hsl(30, 25%, 89%);
-    --t1-number-key-shadow: hsl(28, 16%, 65%);
-    --white: hsl(0, 0%, 100%);
-    --t1-text: hsl(221, 14%, 31%);
-    --light-grey: hsl(0, 0%, 90%);
-    --grey: hsl(0, 5%, 81%);
-    --very-light-grey: hsl(0, 0%, 93%);
-    --cyan: hsl(185, 42%, 37%);
-    --cyan-shadow: hsl(185, 58%, 25%);
-    --orange: hsl(25, 98%, 40%);
-    --orange-shadow: hsl(25, 99%, 27%);
-    --t2-key-number: hsl(45, 7%, 89%);
-    --t2-key-number-shadow: hsl(35, 11%, 61%);
-    --t2-text: hsl(60, 10%, 19%);
-    --very-dark-violet: hsl(268, 75%, 9%);
-    --dark-violet: hsl(268, 71%, 12%);
-    --magenta: hsl(281, 89%, 26%);
-    --magenta-shadow: hsl(285, 91%, 52%);
-    --light-blue: hsl(176, 100%, 44%);
-    --light-blue-shadow: hsl(177, 92%, 70%);
-    --violet: hsl(268, 47%, 21%);
-    --violet-shadow: hsl(290, 70%, 36%);
-    --t3-text: hsl(198, 20%, 13%);
-    --yellow: hsl(52, 100%, 62%);
+    --main-bg: hsl(222, 26%, 31%);
+    --keypad-bg: hsl(223, 31%, 20%);
+    --screen-bg: hsl(224, 36%, 15%);
+    --toggle-btn:  hsl(6, 63%, 50%);
+    --del-reset-bg: hsl(225, 21%, 49%);
+    --del-reset-shadow: hsl(224, 28%, 35%);
+    --equals-bg: hsl(6, 63%, 50%);
+    --equals-shadow: hsl(6, 70%, 34%);
+    --key-bg: hsl(30, 25%, 89%);
+    --key-shadow: hsl(28, 16%, 65%);
+    --result-color: hsl(0, 0%, 100%);
+    --text2: hsl(0, 0%, 100%);
+    --text1: hsl(221, 14%, 31%);
+    --text-header: hsl(0, 0%, 100%);
+    --equals-text: hsl(0, 0%, 100%);
+    font-family: 'League Spartan', sans-serif;
 }
 
 button{
@@ -43,8 +28,7 @@ button{
 }
 
 .body{
-    background-color: var(--main-bg-blue);
-    font-family: 'League Spartan', sans-serif;
+    background-color: var(--main-bg);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,7 +37,7 @@ button{
 
 .header{
     display: flex;
-    color: var(--white);
+    color: var(--text-header);
     justify-content: space-between;
     height: 10vh;
     width: 300px;
@@ -97,7 +81,7 @@ button{
 .tri-toggle{
     width: 55px;
     height: 17px;
-    background-color: var(--keypad-blue);
+    background-color: var(--keypad-bg);
     border-radius: 10px;
     position: relative;
     top: 0;
@@ -110,7 +94,7 @@ button{
     height: 13px;
     border-radius: 50%;
     appearance: none;
-    background-color: var(--red);
+    background-color: var(--toggle-btn);
     opacity: 0;
     position:relative;
     top: 2px;
@@ -127,7 +111,7 @@ button{
 main{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     width: 300px;
 }    
     @media all and (min-width: 375px){
@@ -137,9 +121,9 @@ main{
 }
 .screen{
     height: 12vh;
-    background-color: var(--dark-blue);
+    background-color: var(--screen-bg);
     border-radius: 5px;
-    color: var(--white);
+    color: var(--result-color);
     text-align: right;
     display: flex;
     flex-direction: column;
@@ -161,7 +145,7 @@ main{
     border-radius: 5px;
     padding: 10px 0 10px 0;
     height: 60vh;
-    background-color: var(--keypad-blue);
+    background-color: var(--keypad-bg);
     display: grid;
     padding: 10px 15px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -169,14 +153,15 @@ main{
 }
 
 .key{
-    background-color: var(--t1-number-key);
+    background-color: var(--key-bg);
     border-radius: 5px;
-    box-shadow:  0px 3px 1px 0px var(--t1-number-key-shadow);
+    box-shadow:  0px 3px 1px 0px var(--key-shadow);
     margin: 10px 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--t1-text);
+    color: var(--text1);
+    font-family: 'League Spartan', sans-serif;
     font-size: 20px;
 }
 
@@ -185,15 +170,17 @@ main{
 }
 
 .del{
-    background-color: var(--key-grey-blue);
+    background-color: var(--del-reset-bg);
     border-radius: 5px;
-    box-shadow: 0px 3px 1px 0px var(--key-grey-blue-shadow);
+    box-shadow: 0px 3px 1px 0px var(--del-reset-shadow);
     margin: 10px 5px;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--white);
+    color: var(--text2);
+    font-family: 'League Spartan', sans-serif;
+    font-size: 20px;
 }
 
 .del:hover{
@@ -201,17 +188,19 @@ main{
 }
 
 .reset{
-    background-color: var(--key-grey-blue);
+    background-color: var(--del-reset-bg);
     border-radius: 5px;
     grid-column-start: 1;
     grid-column-end: 3;
-    box-shadow: 0px 3px 1px 0px var(--key-grey-blue-shadow);
+    box-shadow: 0px 3px 1px 0px var(--del-reset-shadow);
     margin: 10px 5px;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--white);
+    color: var(--text2);
+    font-family: 'League Spartan', sans-serif;
+    font-size: 20px;
 }
 
 .reset:hover{
@@ -219,16 +208,18 @@ main{
 }
 
 .equals{
-    background-color: var(--red);
+    background-color: var(--equals-bg);
     border-radius: 5px;
     grid-column-start: 3;
     grid-column-end: 5;
-    box-shadow: 0px 3px 1px 0px var(--red-shadow);
+    box-shadow: 0px 3px 1px 0px var(--equals-shadow);
     margin: 10px 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--white);
+    color: var(--equals-text);
+    font-family: 'League Spartan', sans-serif;
+    font-size: 20px;
 }
 
 .equals:hover{
@@ -238,118 +229,15 @@ main{
 .attribution{
     font-size: 11px; 
     text-align: center;
-    color: var(--white);
-    margin-top: 20px;
+    color: var(--text2);
+    margin-top: 40px;
 }
 .attribution a{
-    color: var(--white);
+    color: var(--text2);
 }
 
 .attribution a:hover{
-    color: var(--red);
+    color: var(--toggle-btn);
 }
-
-
-/* Theme 2 styles */
-
-.body .theme2{
-    background-color: var(--light-grey);
-}
-
-.header .theme2{
-    color: var(--t2-text);
-}
-
-.tri-toggle .theme2{
-    background-color: var(--grey);
-}
-
-.toggle-button .theme2{
-    background-color: var(--orange);
-}
-
-.screen .theme2{
-    background-color: var(--very-light-grey);
-}
-
-.keypad .theme2{
-    background-color: var(--grey);
-}
-
-.key .theme2{
-    background-color: var(--t2-key-number);
-    box-shadow:  0px 3px 1px 0px var(--t2-key-number-shadow);
-    color: var(--t2-text);
-}
-
-.del .theme2{
-    background-color:var(--cyan);
-    box-shadow:  0px 3px 1px 0px var(--cyan-shadow);
-    color: var(--white);
-}
-
-.reset .theme2{
-    background-color:var(--cyan);
-    box-shadow:  0px 3px 1px 0px var(--cyan-shadow);
-    color: var(--white);
-}
-
-.equals .theme2{
-    background-color: var(--orange);
-    box-shadow:  0px 3px 1px 0px var(--orange-shadow);
-    color: var(--white);
-}
-
-
-/* Theme 3 styles */
-
-.body .theme3{
-    background-color: var(--very-dark-violet);
-}
-
-.header .theme3{
-    color: var(--yellow);
-}
-
-.tri-toggle .theme3{
-    background-color: var(--dark-violet);
-}
-
-.bullet .theme3{
-    background-color: var(--light-blue);
-}
-
-.screen .theme3{
-    background-color: var(--dark-violet);
-}
-
-.keypad .theme3{
-    background-color: var(--dark-violet);
-}
-
-.key .theme3{
-    background-color: var(--violet);
-    box-shadow:  0px 3px 1px 0px var(--violet-shadow);
-    color: var(--yellow);
-}
-
-.del .theme2{
-    background-color: var(--magenta);
-    box-shadow:  0px 3px 1px 0px var(--magenta-shadow);
-    color: var(--white);
-}
-
-.reset .theme2{
-    background-color: var(--magenta);
-    box-shadow:  0px 3px 1px 0px var(--magenta-shadow);
-    color: var(--white);
-}
-
-.equals .theme2{
-    background-color: var(--light-blue);
-    box-shadow:  0px 3px 1px 0px var(--light-blue-shadow);
-    color: var(--t3-text);
-}
-
 
 
