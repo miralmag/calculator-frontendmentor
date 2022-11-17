@@ -13,66 +13,68 @@ class Calculator {
     constructor(screenDownResult, screenUpResult){
         this.screenUpResult = screenUpResult;
         this.screenDownResult = screenDownResult;
-        this.previousValue = '';
         this.currentValue = '';
+        this.previousValue = '';
         this.operator = undefined;
     }
 
     addNumber(number){
-        if (number === '.' && this.previousValue.includes('.')) return;
-        this.previousValue = this.previousValue + number;
+        if (number === '.' && this.currentValue.includes('.')) return;
+        this.currentValue = this.currentValue + number;
     }
 
     display() {
-        this.screenDownResult.innerText = this.previousValue;
-        this.screenUpResult.innerText = this.currentValue;
+        this.screenDownResult.innerText = this.currentValue;
+        this.screenUpResult.innerText = this.previousValue;
     }
 
     delete() {
-        this.previousValue = this.previousValue.slice(0,-1)
+        this.currentValue = this.currentValue.toString().slice(0,-1)
     }
 
     reset() {
-        this.previousValue = '';
         this.currentValue = '';
+        this.previousValue = '';
         this.operator = undefined;
     }
 
     chooseOperator(operator) {
-        if (this.previousValue === '') return;
-        if (this.currentValue !== '') {
+        console.log(this.currentValue);
+        console.log(this.operator)
+        if (this.currentValue === '') return;
+        if (this.operator !== '') {
             this.calculate();
         }
 
         this.operator = operator;
-        this.currentValue = this.previousValue;
-        this.previousValue = '';
+        this.previousValue = this.currentValue;
+        this.currentValue = '';
     }
 
     calculate() {
         let result;
-        let parsedCurrentValue = parseFloat(this.currentValue);
-        let parsedPreviousValue = parseFloat(this.previousValue);
-        if (isNaN(parsedCurrentValue) || isNaN(parsedPreviousValue)) return;
+        let parsedpreviousValue = parseFloat(this.previousValue);
+        let parsedcurrentValue = parseFloat(this.currentValue);
+        if (isNaN(parsedpreviousValue) || isNaN(parsedcurrentValue)) return;
         switch(this.operator) {
             case '+' :
-                result = parsedCurrentValue + parsedPreviousValue;
+                result = parsedpreviousValue + parsedcurrentValue;
             break;
             case '-':
-                result = parsedCurrentValue - parsedPreviousValue;
+                result = parsedpreviousValue - parsedcurrentValue;
             break;
             case '/':
-                result = parsedCurrentValue /parsedPreviousValue;
+                result = parsedpreviousValue /parsedcurrentValue;
             break;
             case 'x':
-                result = parsedCurrentValue * parsedPreviousValue;
+                result = parsedpreviousValue * parsedcurrentValue;
             break;
             default: return;
         }
 
-        this.previousValue = result;
+        this.currentValue = result;
         this.operator = undefined;
-        this.currentValue = '';
+        this.previousValue = '';
     }
 
 }
